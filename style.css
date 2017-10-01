@@ -1,0 +1,101 @@
+html {
+font-family: Georgia, serif;
+font-size: 16px;
+line-height: 150%;}
+
+body {
+box-sizing: border-box;
+margin: 0;
+padding: 5px;
+text-align: center;
+background-color: WhiteSmoke;}
+
+article {
+text-align: left;
+margin: 0 auto 0 auto;
+min-width: 1200px;
+max-width: 1400px;}
+
+h1 {
+margin: 20px;
+font-size: 2rem;
+font-weight: normal;
+text-align: center;}
+
+h2 {
+margin: 10px 5px 10px 5px;
+font-size: 1.4rem;
+font-weight: normal;}
+
+p {
+margin: 0 5px 5px 5px;}
+
+ul, ol {
+margin: 0 5px 5px 5px;
+padding: 0 0 0 25px;}
+
+table {
+counter-reset: mark;
+border-collapse: collapse;
+border-spacing: 3px;
+margin: 20px 0 20px 0;
+width: 100%;}
+
+thead.fixed {
+position: fixed;
+display: table;
+width: 100%;}
+
+tr:nth-child(even) {
+background-color: LightGrey;}
+
+th {
+padding: 5px;
+color: White;
+text-align: center;
+background-color: Grey;}
+
+td {
+padding: 5px;
+vertical-align: top;}
+
+sup a {
+text-decoration: none;}
+
+sup a:focus {
+outline: none;}
+
+sup a::after {
+counter-increment: mark;
+content: "["counter(mark)"]";
+color: Grey;}
+
+span.episode-number {
+font-family: Verdana, sans-serif;
+font-size: 0.9rem;
+color: Grey;}
+
+#popup {
+display: none;
+position: absolute;
+padding: 3px;
+max-width: 400px;
+width: auto;
+height: auto;
+font-size: 0.8rem;
+border: 1px solid black;
+border-radius: 3px;
+box-shadow: 3px 3px Grey;
+background-color: WhiteSmoke;}
+
+#popup.visible {
+display: block;}
+
+footer li a {
+padding: 2px;
+color: Black;
+text-decoration: none;}
+
+footer li a:focus {
+outline: none;
+background-color: LightGrey;}

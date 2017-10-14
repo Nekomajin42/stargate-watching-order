@@ -16,6 +16,34 @@ margin: 0 auto 0 auto;
 min-width: 1200px;
 max-width: 1400px;}
 
+form {
+display: inline-block;
+float: right;
+width: 400px;
+margin: 0 0 10px 10px;
+padding: 5px;
+font-size: 0.8rem;
+background-color: LightGrey;}
+
+aside {
+display: inline-block;
+float: right;
+margin: 0 0 10px 10px;
+padding: 5px;
+background-color: LightGrey;}
+
+aside ul {
+display: inline-block;
+vertical-align: top;
+margin: 0 10px 0 0;}
+
+aside ul a {
+color: Black;
+text-decoration: none;}
+
+aside ul a:hover {
+text-decoration: underline;}
+
 h1 {
 margin: 20px;
 font-size: 2rem;
@@ -46,7 +74,7 @@ position: fixed;
 display: table;
 width: 100%;}
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
 background-color: LightGrey;}
 
 th {

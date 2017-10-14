@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function()
 	{
 		marks[i].addEventListener("mouseenter", function(e)
 		{
-			let id = e.target.id.substring(e.target.id.indexOf("-")+1);
+			let id = e.target.id.substring(e.target.id.indexOf("-") + 1);
 			popup.innerHTML = document.querySelector("#note-" + id).innerHTML;
 			popup.style.top = e.pageY + 10 + "px";
 			popup.style.left = e.pageX + 10 + "px";

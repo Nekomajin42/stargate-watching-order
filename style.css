@@ -6,7 +6,7 @@ line-height: 150%;}
 body {
 box-sizing: border-box;
 margin: 0;
-padding: 5px;
+padding: 0 5px 0 5px;
 text-align: center;
 background-color: WhiteSmoke;}
 
@@ -14,16 +14,7 @@ article {
 text-align: left;
 margin: 0 auto 0 auto;
 min-width: 1200px;
-max-width: 1400px;}
-
-form {
-display: inline-block;
-float: right;
-width: 400px;
-margin: 0 0 10px 10px;
-padding: 5px;
-font-size: 0.8rem;
-background-color: LightGrey;}
+max-width: 1600px;}
 
 aside {
 display: inline-block;
@@ -32,17 +23,32 @@ margin: 0 0 10px 10px;
 padding: 5px;
 background-color: LightGrey;}
 
+aside h2 {
+text-align: center;}
+
 aside ul {
 display: inline-block;
+list-style-type: none;
 vertical-align: top;
-margin: 0 10px 0 0;}
+margin: 0 10px 0 0;
+padding: 0;}
+
+aside ul span {
+display: inline-block;
+width: 80px;
+text-align: right;}
 
 aside ul a {
+display: inline-block;
+padding: 2px 6px 2px 6px;
 color: Black;
-text-decoration: none;}
+line-height: 120%;
+text-align: center;
+text-decoration: none;
+background-color: LightGrey;}
 
 aside ul a:hover {
-text-decoration: underline;}
+background-color: WhiteSmoke;}
 
 h1 {
 margin: 20px;
@@ -63,67 +69,106 @@ margin: 0 5px 5px 5px;
 padding: 0 0 0 25px;}
 
 table {
+display: block;
 counter-reset: mark;
 border-collapse: collapse;
 border-spacing: 3px;
-margin: 20px 0 20px 0;
+margin: 20px 0 0 0;
 width: 100%;}
 
-thead.fixed {
-position: fixed;
+thead {
+display: table;
+position: sticky;
+top: 0;
+width: 100%;}
+
+tbody {
 display: table;
 width: 100%;}
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
 background-color: LightGrey;}
 
 th {
+width: 25%;
 padding: 5px;
 color: White;
 text-align: center;
 background-color: Grey;}
 
 td {
+width: 25%;
 padding: 5px;
 vertical-align: top;}
 
 sup a {
-text-decoration: none;}
+text-decoration: none;
+cursor: help;}
 
 sup a:focus {
 outline: none;}
 
-sup a::after {
+sup a:not(.spoiler)::after {
+counter-increment: mark;
+content: "["counter(mark)"]";
+color: Black;}
+
+sup a.spoiler::after {
 counter-increment: mark;
 content: "["counter(mark)"]";
 color: Grey;}
 
 span.episode-number {
-font-family: Verdana, sans-serif;
-font-size: 0.9rem;
-color: Grey;}
+font-family: "Courier New", Courier, monospace;
+font-weight: bold;
+color: Grey;
+white-space: pre;}
+
+#notes {
+display: none;}
 
 #popup {
-display: none;
+display: inline-block;
+visibility: hidden;
 position: absolute;
-padding: 3px;
-max-width: 400px;
-width: auto;
-height: auto;
-font-size: 0.8rem;
+top: 0;
+left: 0;
+box-sizing: border-box;
+padding: 3px 5px 3px 5px;
+width: 400px;
+height: 100px;
+font-size: 0.9rem;
 border: 1px solid black;
 border-radius: 3px;
 box-shadow: 3px 3px Grey;
 background-color: WhiteSmoke;}
 
 #popup.visible {
-display: block;}
+visibility: visible;}
+
+footer {
+box-sizing: border-box;
+overflow: auto;
+margin: 0;
+padding: 3px 10px 3px 10px;
+font-size: 0.8rem;
+color: White;
+background-color: Grey;}
+
+footer ul {
+list-style-type: none;
+margin: 0;
+padding: 0;}
+
+footer ul li {
+display: inline-block;}
 
 footer li a {
 padding: 2px;
-color: Black;
+color: inherit;
 text-decoration: none;}
 
-footer li a:focus {
+footer li a:hover {
 outline: none;
+color: Black;
 background-color: LightGrey;}

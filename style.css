@@ -6,15 +6,15 @@ line-height: 150%;}
 body {
 box-sizing: border-box;
 margin: 0;
-padding: 0 5px 0 5px;
+padding: 0;
 text-align: center;
 background-color: WhiteSmoke;}
 
 article {
 text-align: left;
 margin: 0 auto 0 auto;
-min-width: 1200px;
-max-width: 1600px;}
+min-width: 1000px;
+max-width: 2000px;}
 
 aside {
 display: inline-block;
@@ -30,12 +30,12 @@ aside ul {
 display: inline-block;
 list-style-type: none;
 vertical-align: top;
-margin: 0 10px 0 0;
+margin: 0;
 padding: 0;}
 
 aside ul span {
 display: inline-block;
-width: 80px;
+width: 70px;
 text-align: right;}
 
 aside ul a {
@@ -45,13 +45,14 @@ color: Black;
 line-height: 120%;
 text-align: center;
 text-decoration: none;
-background-color: LightGrey;}
+background-color: LightGrey;
+transition: background-color 0.3s;}
 
 aside ul a:hover {
 background-color: WhiteSmoke;}
 
 h1 {
-margin: 20px;
+margin: 20px 0 30px 0;
 font-size: 2rem;
 font-weight: normal;
 text-align: center;}
@@ -73,7 +74,7 @@ display: block;
 counter-reset: mark;
 border-collapse: collapse;
 border-spacing: 3px;
-margin: 20px 0 0 0;
+margin: 10px 0 0 0;
 width: 100%;}
 
 thead {
@@ -101,6 +102,13 @@ width: 25%;
 padding: 5px;
 vertical-align: top;}
 
+td br {
+content: "";}
+
+sup {
+padding: 0 0 0 3px;
+line-height: 100%;}
+
 sup a {
 text-decoration: none;
 cursor: help;}
@@ -118,33 +126,40 @@ counter-increment: mark;
 content: "["counter(mark)"]";
 color: Grey;}
 
-span.episode-number {
+span.number {
+display: table-cell;
+padding: 0 3px 0 0;
 font-family: "Courier New", Courier, monospace;
 font-weight: bold;
 color: Grey;
 white-space: pre;}
+
+span.title {
+display: table-cell;
+white-space: nowrap;}
 
 #notes {
 display: none;}
 
 #popup {
 display: inline-block;
-visibility: hidden;
 position: absolute;
 top: 0;
 left: 0;
 box-sizing: border-box;
 padding: 3px 5px 3px 5px;
-width: 400px;
-height: 100px;
+max-width: 400px;
 font-size: 0.9rem;
+text-align: left;
 border: 1px solid black;
 border-radius: 3px;
 box-shadow: 3px 3px Grey;
-background-color: WhiteSmoke;}
+background-color: WhiteSmoke;
+opacity: 0;
+transition: opacity 0.3s;}
 
 #popup.visible {
-visibility: visible;}
+opacity: 1;}
 
 footer {
 box-sizing: border-box;

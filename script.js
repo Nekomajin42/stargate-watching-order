@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function()
 		{
 			let id = e.target.id.substring(e.target.id.indexOf("-") + 1);
 			let popup = document.createElement("div");
-			popup.id = "popup";
+			popup.classList.add("popup");
 			popup.innerHTML = document.querySelector("#note-" + id).innerHTML;
 			document.body.appendChild(popup);	
 			popup.style.left = (window.scrollX + window.innerWidth - e.pageX < popup.clientWidth) ? 
@@ -23,12 +23,22 @@ window.addEventListener("DOMContentLoaded", function()
 		
 		marks[i].addEventListener("mouseleave", function()
 		{
-			let popup = document.querySelector("#popup");
-			popup.classList.remove("visible");
-			window.setTimeout(function()
+			let popups = document.querySelectorAll(".popup");
+			for (let i=0; i<popups.length; i++)
 			{
-				document.body.removeChild(popup);
-			}, 300);
+				popups[i].classList.remove("visible");
+				window.setTimeout(function()
+				{
+					try
+					{
+						document.body.removeChild(popups[i]);
+					}
+					catch (e)
+					{
+						return;
+					}
+				}, 300);
+			}
 		});
 		
 		marks[i].addEventListener("click", function(e)

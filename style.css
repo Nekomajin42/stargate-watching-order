@@ -95,7 +95,7 @@ width: 25%;
 padding: 5px;
 color: White;
 text-align: center;
-background-color: Grey;}
+background-color: rgba(128, 128, 128, 0.9);}
 
 td {
 width: 25%;
@@ -103,7 +103,9 @@ padding: 5px;
 vertical-align: top;}
 
 td br {
-content: "";}
+content: "";
+display: block;
+height: 0;}
 
 sup {
 padding: 0 0 0 3px;
@@ -141,7 +143,7 @@ white-space: nowrap;}
 #notes {
 display: none;}
 
-#popup {
+.popup {
 display: inline-block;
 position: absolute;
 top: 0;
@@ -158,7 +160,7 @@ background-color: WhiteSmoke;
 opacity: 0;
 transition: opacity 0.3s;}
 
-#popup.visible {
+.popup.visible {
 opacity: 1;}
 
 footer {

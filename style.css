@@ -16,39 +16,40 @@ margin: 0 auto 0 auto;
 min-width: 1000px;
 max-width: 2000px;}
 
-aside {
+nav {
 display: inline-block;
 float: right;
 margin: 0 0 10px 10px;
 padding: 5px;
 background-color: LightGrey;}
 
-aside h2 {
+nav h2 {
 text-align: center;}
 
-aside ul {
+nav ul {
 display: inline-block;
 list-style-type: none;
 vertical-align: top;
 margin: 0;
 padding: 0;}
 
-aside ul span {
+nav ul span {
 display: inline-block;
 width: 70px;
 text-align: right;}
 
-aside ul a {
+nav ul a {
 display: inline-block;
 padding: 2px 6px 2px 6px;
 color: Black;
 line-height: 120%;
 text-align: center;
 text-decoration: none;
+border-radius: 3px;
 background-color: LightGrey;
 transition: background-color 0.3s;}
 
-aside ul a:hover {
+nav ul a:hover {
 background-color: WhiteSmoke;}
 
 h1 {
@@ -81,6 +82,7 @@ thead {
 display: table;
 position: sticky;
 top: 0;
+z-index: 100;
 width: 100%;}
 
 tbody {
@@ -189,3 +191,24 @@ footer li a:hover {
 outline: none;
 color: Black;
 background-color: LightGrey;}
+
+#scroll-top {
+position: fixed;
+bottom: 0;
+width: 40px;
+height: 40px;
+padding: 0;
+color: White;
+font-size: 20px;
+font-weight: bold;
+border: none;
+background-color: rgba(128, 128, 128, 0.9);
+border-radius: 50%;
+cursor: pointer;
+transform: translate(-60px, -40px);}
+
+#scroll-top:hover {
+color: LightGrey;}
+
+#scroll-top:focus {
+outline: none;}

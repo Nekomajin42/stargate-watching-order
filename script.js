@@ -2,11 +2,24 @@
 
 window.addEventListener("DOMContentLoaded", function()
 {
+	const jumps = document.querySelectorAll("nav ul li a");
+	for (let i=0; i<jumps.length; i++)
+	{
+		jumps[i].addEventListener("click", function(e)
+		{
+			e.preventDefault();
+			let target = document.querySelector(this.href.substring(this.href.indexOf("#")));
+			let down = document.querySelector("table").offsetTop + target.offsetTop - 40;
+			window.scrollTo(0, down);
+		});
+	}
+	
 	const marks = document.querySelectorAll("sup a");
 	for (let i=0; i<marks.length; i++)
 	{
-		marks[i].addEventListener("mouseenter", function(e)
+		marks[i].addEventListener("click", function(e)
 		{
+			e.stopPropagation();
 			let id = e.target.id.substring(e.target.id.indexOf("-") + 1);
 			let popup = document.createElement("div");
 			popup.classList.add("popup");
@@ -21,7 +34,7 @@ window.addEventListener("DOMContentLoaded", function()
 			popup.classList.add("visible");
 		});
 		
-		marks[i].addEventListener("mouseleave", function()
+		/*marks[i].addEventListener("mouseleave", function()
 		{
 			let popups = document.querySelectorAll(".popup");
 			for (let i=0; i<popups.length; i++)
@@ -39,11 +52,37 @@ window.addEventListener("DOMContentLoaded", function()
 					}
 				}, 300);
 			}
-		});
+		});*/
 		
 		marks[i].addEventListener("click", function(e)
 		{
 			e.preventDefault();
 		});
 	}
+	
+	document.body.addEventListener("click", function()
+	{
+		let popups = document.querySelectorAll(".popup");
+		for (let i=0; i<popups.length; i++)
+		{
+			popups[i].classList.remove("visible");
+			window.setTimeout(function()
+			{
+				try
+				{
+					document.body.removeChild(popups[i]);
+				}
+				catch (e)
+				{
+					return;
+				}
+			}, 300);
+		}
+	});
+	
+	document.querySelector("#scroll-top").addEventListener("click", function()
+	{
+		location.hash = "";
+		window.scrollTo(0, 0);
+	});
 });

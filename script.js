@@ -2,6 +2,7 @@
 
 window.addEventListener("DOMContentLoaded", function()
 {
+	// jump to target cells from the nav box
 	const jumps = document.querySelectorAll("nav ul li a");
 	for (let i=0; i<jumps.length; i++)
 	{
@@ -14,6 +15,7 @@ window.addEventListener("DOMContentLoaded", function()
 		});
 	}
 	
+	// create tooltips from footnotes
 	const marks = document.querySelectorAll("sup a");
 	for (let i=0; i<marks.length; i++)
 	{
@@ -60,6 +62,7 @@ window.addEventListener("DOMContentLoaded", function()
 		});
 	}
 	
+	// destroy tooltips created from footnotes
 	document.body.addEventListener("click", function()
 	{
 		let popups = document.querySelectorAll(".popup");
@@ -80,6 +83,7 @@ window.addEventListener("DOMContentLoaded", function()
 		}
 	});
 	
+	// jump to the top of the page
 	document.querySelector("#scroll-top").addEventListener("click", function()
 	{
 		location.hash = "";

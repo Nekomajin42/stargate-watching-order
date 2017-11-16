@@ -15,11 +15,11 @@ window.addEventListener("DOMContentLoaded", function()
 		});
 	}
 	
-	// create tooltips from footnotes
+	// create and destroy tooltips from footnotes
 	const marks = document.querySelectorAll("sup a");
 	for (let i=0; i<marks.length; i++)
 	{
-		marks[i].addEventListener("click", function(e)
+		marks[i].addEventListener("mouseenter", function(e)
 		{
 			e.stopPropagation();
 			let id = e.target.id.substring(e.target.id.indexOf("-") + 1);
@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function()
 			popup.classList.add("visible");
 		});
 		
-		/*marks[i].addEventListener("mouseleave", function()
+		marks[i].addEventListener("mouseleave", function()
 		{
 			let popups = document.querySelectorAll(".popup");
 			for (let i=0; i<popups.length; i++)
@@ -54,34 +54,13 @@ window.addEventListener("DOMContentLoaded", function()
 					}
 				}, 300);
 			}
-		});*/
+		});
 		
 		marks[i].addEventListener("click", function(e)
 		{
 			e.preventDefault();
 		});
 	}
-	
-	// destroy tooltips created from footnotes
-	document.body.addEventListener("click", function()
-	{
-		let popups = document.querySelectorAll(".popup");
-		for (let i=0; i<popups.length; i++)
-		{
-			popups[i].classList.remove("visible");
-			window.setTimeout(function()
-			{
-				try
-				{
-					document.body.removeChild(popups[i]);
-				}
-				catch (e)
-				{
-					return;
-				}
-			}, 300);
-		}
-	});
 	
 	// jump to the top of the page
 	document.querySelector("#scroll-top").addEventListener("click", function()

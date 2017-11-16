@@ -152,14 +152,14 @@ position: absolute;
 top: 0;
 left: 0;
 box-sizing: border-box;
-padding: 3px 5px 3px 5px;
+padding: 5px 8px 5px 8px;
 max-width: 400px;
+color: White;
 font-size: 0.9rem;
 text-align: left;
-border: 1px solid black;
-border-radius: 3px;
-box-shadow: 3px 3px Grey;
-background-color: WhiteSmoke;
+border: none;
+border-radius: 5px;
+background-color: rgba(128, 128, 128, 0.9);
 opacity: 0;
 transition: opacity 0.3s;}
 
@@ -213,7 +213,7 @@ font-size: 20px;
 font-weight: bold;
 border: none;
 background-color: rgba(128, 128, 128, 0.9);
-border-radius: 50%;
+border-radius: 5px;
 cursor: pointer;
 transform: translate(30px, -40px);}
 

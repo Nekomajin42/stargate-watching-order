@@ -2,19 +2,6 @@
 
 window.addEventListener("DOMContentLoaded", function()
 {
-	// jump to target cells from the nav box
-	const jumps = document.querySelectorAll("nav ul li a");
-	for (let i=0; i<jumps.length; i++)
-	{
-		jumps[i].addEventListener("click", function(e)
-		{
-			e.preventDefault();
-			let target = document.querySelector(this.href.substring(this.href.indexOf("#")));
-			let down = document.querySelector("table").offsetTop + target.offsetTop - 40;
-			window.scrollTo(0, down);
-		});
-	}
-	
 	// create and destroy tooltips from footnotes
 	const marks = document.querySelectorAll("sup a");
 	for (let i=0; i<marks.length; i++)
@@ -62,10 +49,38 @@ window.addEventListener("DOMContentLoaded", function()
 		});
 	}
 	
+	// jump to target cells from the nav box
+	const jumps = document.querySelectorAll("nav ul li a");
+	for (let i=0; i<jumps.length; i++)
+	{
+		jumps[i].addEventListener("click", function(e)
+		{
+			e.preventDefault();
+			let target = document.querySelector(this.href.substring(this.href.indexOf("#")));
+			let down = document.querySelector("table").offsetTop + target.offsetTop - 40;
+			window.scrollTo(window.pageXOffset, down);
+		});
+	}
+	
+	// show jump to top button only after scroll
+	window.addEventListener("scroll", function()
+	{
+		let button = document.querySelector("#scroll-top");
+		let table = document.querySelector("table");
+		if (window.pageYOffset > table.offsetTop)
+		{
+			button.classList.add("visible");
+		}
+		else
+		{
+			button.classList.remove("visible");
+		}
+	});
+	
 	// jump to the top of the page
 	document.querySelector("#scroll-top").addEventListener("click", function()
 	{
 		location.hash = "";
-		window.scrollTo(0, 0);
+		window.scrollTo(window.pageXOffset, 0);
 	});
 });

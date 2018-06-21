@@ -206,7 +206,7 @@ padding: 0 5px 0 5px;}
 #scroll-top {
 position: fixed;
 bottom: 40px;
-left: 30px;
+left: 40px;
 width: 40px;
 height: 40px;
 padding: 0;
@@ -218,8 +218,7 @@ background-color: rgba(128, 128, 128, 0.9);
 border-radius: 5px;
 opacity: 0;
 transition: opacity 0.3s;
-cursor: pointer;
-//transform: translate(30px, -40px);}
+cursor: pointer;}
 
 #scroll-top.visible {
 visibility: visible;

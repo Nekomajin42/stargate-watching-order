@@ -77,7 +77,6 @@ position: relative;
 counter-reset: mark;
 border-collapse: collapse;
 border-spacing: 3px;
-table-layout: fixed;
 margin: 10px 0 0 0;
 width: 100%;}
 
@@ -206,7 +205,8 @@ padding: 0 5px 0 5px;}
 
 #scroll-top {
 position: fixed;
-bottom: 0;
+bottom: 40px;
+left: 30px;
 width: 40px;
 height: 40px;
 padding: 0;
@@ -219,7 +219,7 @@ border-radius: 5px;
 opacity: 0;
 transition: opacity 0.3s;
 cursor: pointer;
-transform: translate(30px, -40px);}
+//transform: translate(30px, -40px);}
 
 #scroll-top.visible {
 visibility: visible;

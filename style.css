@@ -77,6 +77,7 @@ position: relative;
 counter-reset: mark;
 border-collapse: collapse;
 border-spacing: 3px;
+table-layout: fixed;
 margin: 10px 0 0 0;
 width: 100%;}
 

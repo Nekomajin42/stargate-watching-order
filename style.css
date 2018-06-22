@@ -172,6 +172,7 @@ box-sizing: border-box;
 overflow: auto;
 margin: 0;
 padding: 3px 10px 3px 10px;
+clear: both;
 font-size: 0.8rem;
 color: White;
 background-color: Grey;}
